@@ -1,4 +1,4 @@
-package Fuction;
+package fuction;
 
 public class Function1 {
 
