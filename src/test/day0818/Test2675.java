@@ -27,6 +27,7 @@ public class Test2675 {
 		 }//end for
 		 result += "\n";
 		}//end for
+		br.close();
 		System.out.println(result);
 	}//main
 	

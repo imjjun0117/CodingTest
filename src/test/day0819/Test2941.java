@@ -1,4 +1,4 @@
-package test.day0818;
+package test.day0819;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,15 +10,16 @@ public class Test2941 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input = br.readLine();
+		br.close();
 		int cnt = 0;
 		char ch = 0;
 		for (int i = 0; i < input.length(); i++) {
 			ch = input.charAt(i);
 			if (ch == 'c') {
 				if (i < input.length() - 1) {
-					if (input.charAt(i + 1) == '=') {
+					if (input.charAt(i + 1) == '=' || input.charAt(i+1) == '-') {
 						i++;
-					} // end if
+					}//end if
 				} // end if
 			} else if (ch == 'd') {
 				if (i < input.length() - 1) {
@@ -33,25 +34,25 @@ public class Test2941 {
 					}
 				}
 			} else if (ch == 'l') {
-				if (i < input.length() - 2) {
+				if (i < input.length() - 1) {
 					if (input.charAt(i + 1) == 'j') {
 						i++;
 					}
 				}
 			} else if (ch == 'n') {
-				if (i < input.length() - 2) {
+				if (i < input.length() - 1) {
 					if (input.charAt(i + 1) == 'j') {
 						i++;
 					}
 				}
 			} else if (ch == 's') {
-				if (i < input.length() - 2) {
+				if (i < input.length() - 1) {
 					if (input.charAt(i + 1) == '=') {
 						i++;
 					}
 				}
 			} else if (ch == 'z') {
-				if (i < input.length() - 2) {
+				if (i < input.length() - 1) {
 					if (input.charAt(i + 1) == '=') {
 						i++;
 					}

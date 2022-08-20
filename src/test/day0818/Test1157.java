@@ -6,31 +6,34 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Test1157 {
-	
+
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input = br.readLine();
-		int[] count = new int[input.length()];
 		input = input.toUpperCase();
-		for(int i = 0; i < input.length();i++) {
-			for(int j = i+1; j <input.length(); j++) {
-				if(input.charAt(i)==input.charAt(j)) {
-					count[i] += 1;
-				}//end if
-			}//end for
-		}//end for
-		int max = 0;
+		br.close();
+		int max= 0;
 		int idx = 0;
-		for(int i=0; i < count.length; i++) {
-			if(count[i]==max && count[i]!=0) {
+		int[] cnt = new int[26];
+		int idx2=0;
+		int idx3=0;
+		for(int i =0; i < input.length(); i++) {
+			idx2=input.charAt(i)-65;
+			cnt[idx2]++;
+			if(cnt[idx2]>max) {
+				max = cnt[idx2];
+				idx = i;
+				idx3= idx2;
+			}
+		}//end for
+		for(int i = 0; i < cnt.length; i++) {
+			if(i != idx3 && max==cnt[i]) {
 				System.out.println("?");
 				return;
-			}else if(count[i] > max) {
-				max = count[i];
-				idx = i;
 			}//end if
 		}//end for
+		
 		System.out.println(input.charAt(idx));
-	}//main
-	
-}//class
+	}// main
+
+}// class
